@@ -38,7 +38,13 @@ class Melon(object):
 
 
 # FIXME: Add Squash Class definition here.
+class Squash(Melon):
+    """Squash."""
 
+    def paint_green(self):
+        """Paint squashes green."""
+
+        robots.painterbot.paint(self)
 
 def show_help():
 
@@ -120,6 +126,10 @@ def main():
 
             robots.pickerbot.pick(m)
             count += 1
+
+            # Paint the squashes
+            if melon_type == "Winter Squash":
+                m.paint_green()
 
             # Prepare the melon
             m.prep()
